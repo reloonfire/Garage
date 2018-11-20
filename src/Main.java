@@ -69,41 +69,27 @@ public class Main {
 		int cilindrata = 0;
 		int nPorte = 0;
 		boolean scelta = true;
-		String alimentazione = "";
+		int alimentazione = 0;
 
 		System.out.println("Inserire marca: ");
 		marca = sc.nextLine();
-		Exception error = null;
-		do {
-			try {
-				error = null;
-				System.out.println("Inserire anno: ");
-				anno = sc.nextInt();
-			} catch (Exception e) {
-				error = new Exception("JK HOW IT WORKS?!");
-				System.out.println("Non so che cosa tu abbia fatto, ma non va bene, riprova.");
-			}
-		} while (error != null);
-		do {
-			try {
-				error = null;
-				System.out.println("Inserire cilindrata: ");
-				cilindrata = sc.nextInt();
-			} catch (Exception e) {
-				error = new Exception("JK HOW IT WORKS?!");
-				System.out.println("Non so che cosa tu abbia fatto, ma non va bene, riprova.");
-			}
-		} while (error != null);
+
+		System.out.println("Inserire anno: ");
+		anno = sc.nextInt();
+
+		System.out.println("Inserire cilindrata: ");
+		cilindrata = sc.nextInt();
+
 		System.out.println("Inserire numero delle porte: ");
 		nPorte = sc.nextInt();
 		while (scelta) {
 			System.out.println("Scegliere alimentazione:\n0)Benzina\n1)Diesel");
-			alimentazione = sc.nextLine();
-			if (alimentazione.equals("0")) {
+			alimentazione = sc.nextInt();
+			if (alimentazione == 0) {
 				Auto auto = new Auto(marca, anno, cilindrata, nPorte, Auto.Alimentazione.Benzina);
 				scelta = false;
 				return auto;
-			} else if (alimentazione.equals("1")) {
+			} else if (alimentazione == 1) {
 				Auto auto = new Auto(marca, anno, cilindrata, nPorte, Auto.Alimentazione.Diesel);
 				scelta = false;
 				return auto;
@@ -127,38 +113,15 @@ public class Main {
 
 		System.out.println("Inserire marca: ");
 		marca = sc.nextLine();
-		Exception error = null;
-		do {
-			try {
-				error = null;
-				System.out.println("Inserire anno: ");
-				anno = sc.nextInt();
-			} catch (Exception e) {
-				error = new Exception("JK HOW IT WORKS?!");
-				System.out.println("Non so che cosa tu abbia fatto, ma non va bene, riprova.");
-			}
-		} while (error != null);
-		do {
-			try {
-				error = null;
-				System.out.println("Inserire cilindrata: ");
-				cilindrata = sc.nextInt();
-			} catch (Exception e) {
-				error = new Exception("JK HOW IT WORKS?!");
-				System.out.println("Non so che cosa tu abbia fatto, ma non va bene, riprova.");
-			}
-		} while (error != null);
-		do {
-			try {
-				error = null;
-				System.out.println("Inserire la capacità del furgone in kilogrammi");
-				kg = sc.nextInt();
-			} catch (Exception e) {
-				error = new Exception("JK HOW IT WORKS?!");
-				System.out.println("Non so che cosa tu abbia fatto, ma non va bene, riprova.");
-			}
-		} while (error != null);
 
+		System.out.println("Inserire anno: ");
+		anno = sc.nextInt();
+
+		System.out.println("Inserire cilindrata: ");
+		cilindrata = sc.nextInt();
+
+		System.out.println("Inserire la capacità del furgone in kilogrammi");
+		kg = sc.nextInt();
 
 		Furgone furgone = new Furgone(marca, anno, cilindrata, kg);
 		return furgone;
@@ -173,27 +136,11 @@ public class Main {
 		System.out.println("Inserire marca: ");
 		marca = sc.nextLine();
 
-		Exception error = null;
-		do {
-			try {
-				error = null;
-				System.out.println("Inserire anno: ");
-				anno = sc.nextInt();
-			} catch (Exception e) {
-				error = new Exception("JK HOW IT WORKS?!");
-				System.out.println("Non so che cosa tu abbia fatto, ma non va bene, riprova.");
-			}
-		} while (error != null);
-		do {
-			error = null;
-			try {
-				System.out.println("Inserire cilindrata: ");
-				cilindrata = sc.nextInt();
-			} catch (Exception e) {
-				error = new Exception("JK HOW IT WORKS?!");
-				System.out.println("Non so che cosa tu abbia fatto, ma non va bene, riprova.");
-			}
-		} while (error != null);
+		System.out.println("Inserire anno: ");
+		anno = sc.nextInt();
+
+		System.out.println("Inserire cilindrata: ");
+		cilindrata = sc.nextInt();
 
 		do {
 			System.out.println("Inserisci i tempi del motore (o 2 o 4): ");
